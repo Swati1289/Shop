@@ -1,0 +1,35 @@
+.center{
+  display: inline-block;
+  text-align: center;
+  margin-top: 13px; 
+  margin-left: 60px;
+}
+.form-control{
+  margin-top: -15px;
+}
+.margin{
+  margin-top: -15px;
+  margin-bottom: 15px;
+}
+.card{
+  margin-top: -45px;
+}
+#outer-box{
+  margin-top: -25px;
+    height: -400px;
+}
+#choice{
+  /* display: flex;
+  flex-direction: row; */
+  margin-left: 100px;
+  margin-bottom: 10px;
+  width: 200px;
+}
+.sign-up{
+  display: inline-block;
+  width: 200px;
+  margin-left: 250px;
+}
+#userCard{
+  margin-left: 10px;
+}

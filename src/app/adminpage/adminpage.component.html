@@ -1,0 +1,55 @@
+<div id="navbar">
+  <ul id="links">
+    <li class="link"  [routerLink]="['/addproduct']">Add Products</li>
+    <li class="link"  [routerLink]="['/producthandling']">Show Products</li>  
+   
+  </ul>
+</div>
+
+<head>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet" />
+</head>
+
+<input type="text" class="form-control" name="userId" [(ngModel)] ="userId" (ngModelChange) ="Search()" placeholder="Enter User ID to search">
+
+<form>
+    <table class="table" >
+        <tr>
+            <th colspan="14" style="text-align:center;" class="thead-dark">USER DETAILS DATABASE</th>
+        </tr>
+      <tr>
+        <th (click)="sortData()">User ID</th>
+        <th >User Name</th>
+        <th (click)="sortPhone()">User Phone</th>
+        <th>User Email</th>
+        <th>User Password</th>
+        <th>User Address</th>
+        <th (click)="sortCard()">User Card Type</th>
+        <th (click)="sortDate()">Applied_on</th>
+        <th (click)="sortStatus()">IsVerified</th>
+        <th>Create Card</th>
+        <th>Delete</th>
+      </tr>
+      <tr *ngFor="let u of user" >
+        <td>{{u.userId}}</td>
+        <td>{{u.userName}}</td>
+        <td>{{u.userPhone}}</td>
+        <td>{{u.userEmail}}</td>
+        <td>{{u.userPass}}</td>
+        <td>{{u.userAdd}}</td>
+        <td>{{u.userCard}}</td>
+        <td>{{u.applied_on}}</td>
+        <td>{{u.verified == true? 'Active': 'InActive'}} </td>
+       <td><button class="btn btn-info" (click)="CreateCard(u.userId)">Issue Card </button></td>
+        <td><button class="btn btn-danger"  (click)="OnDelete(u.userId)">delete</button></td>
+    </tr>
+    </table>     
+    </form>
+
+    
+
+
+
+
+

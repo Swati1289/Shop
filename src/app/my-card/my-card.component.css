@@ -1,0 +1,53 @@
+body{
+  background-image: url(https://tse1.mm.bing.net/th?id=OIP.XIPIyrBVEMF57L8-_5g7JQHaEK&pid=Api&P=0);
+  background-size: cover;
+  height: 540px;
+}
+.testbox {
+  opacity: 0.9;
+    background-color: rgb(214, 127, 127);
+    /* padding-top: 20px; */
+    margin: 30px auto;
+    width: 500px; 
+    height: 300px; 
+    border-top: 30px;
+    border-radius: 30px; 
+    border: solid  #000000;
+  }
+  label{    
+      text-align: center;
+      display: inline-block;
+      border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
+      box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+      border: solid 1px #cbc9c9;
+      margin-left: 25px;
+      margin-top: 8px; 
+      padding: 10px;
+      border-radius: 30px;  
+  }
+  label.cardNo{
+    margin-top: 60px;
+    display:block;
+    width: 450px; 
+      height: 39px; 
+  }
+  .title{
+    margin-top: 35px;
+    margin-bottom: 0px;
+  }
+  ul li {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    border: 2px solid blue;
+  }
+  
+  ul li:hover {
+    background-color: lightgray;
+  }
+  .active {
+  background-color: rgb(247, 183, 247) !important;
+}

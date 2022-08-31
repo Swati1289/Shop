@@ -1,0 +1,32 @@
+.gradient-custom {
+  background-image: url(https://images.pexels.com/photos/747964/pexels-photo-747964.jpeg?auto=compress&cs=tinysrgb&w=600);
+  height: 100%;
+  background-size: cover;
+  }
+  .card{
+    opacity: 0.7;  
+  }
+  .text{
+    display:inline;
+    width: 30px;
+    height: 70px;
+  }
+  .form-outline{
+    margin-top: -15px;
+    margin-bottom: -35px;
+  }
+  .card{opacity: 0.7;
+    display: flex;
+    flex-direction: column;
+  }
+p,button{
+  margin-top: -25px;
+}
+.sign-up{
+  margin-top: 30px;
+}
+.container{
+  display:flex;
+  flex-direction: column;
+}
+

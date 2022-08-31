@@ -1,0 +1,103 @@
+<!-- <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ </head> -->
+<!-- Section: Design Block -->
+
+<section
+  class="h-100 gradient-form"
+  style="background-color: rgb(201, 218, 219)"
+>
+  <div class="container py h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-15">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+                <div class="text-center">
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                    style="width: 185px"
+                    alt="logo"
+                  />
+                  <h4 class="mt-1 mb-5 pb-1">We are The FinEase Team</h4>
+                </div>
+
+                <form>
+                  <h3>Admin Login</h3>
+
+                  <!-- Admiin id input -->
+                  <div class="form-outline mb-3">
+                    <label class="form-label" for="adminId">Admin ID</label>
+                    <input
+                      type="number"
+                      name="adminId"
+                      [(ngModel)]="adminId"
+                      class="form-control form-control-lg"
+                      placeholder="Enter a valid Admin Id"
+                      required
+                      minlength="3"
+                      maxlength="5"
+                    />
+                  </div>
+
+                  <!-- Admin name input -->
+                  <div class="form-outline mb-3">
+                    <label class="form-label" for="adminName">Admin Name</label>
+                    <input
+                      type="text"
+                      name="adminName"
+                      [(ngModel)]="adminName"
+                      class="form-control form-control-lg"
+                      placeholder="Enter Name"
+                      required
+                    />
+                  </div>
+
+                  <!-- Admin Password input -->
+                  <label class="form-label" for="adminpassword">Password</label>
+                  <div class="form-outline mb-3">
+                    <input
+                      type="password"
+                      name="adminpassword"
+                      [(ngModel)]="adminPassword"
+                      class="form-control form-control-lg"
+                      placeholder="Enter password"
+                      required
+                    />
+                  </div>
+
+                  <div class="text-center pt-1 mb-3 pb-6">
+                    <button
+                      value="Login"
+                      (click)="checkAdmin()"
+                      class="btn btn-primary btn-lg gradient-custom-2 mb-3"
+                      type="button"
+                    >
+                      Log in
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <h4 class="mb-4">We are more than just a company</h4>
+                <p class="small mb-0">
+                  The Team Administrator sits at the heart of the team support
+                  and is involved in all areas of the company's work, supporting
+                  the team with general project management and by ensuring the
+                  efficient running of the office and maintaining effective
+                  administrative systems across the organisation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

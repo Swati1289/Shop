@@ -1,0 +1,60 @@
+<div class="main"  >
+  <div class="movie_card" *ngFor="let p of prdList;">
+    <div class="card_body">
+      <div class="poster">
+           <img src="assets/images/img{{p.prdId}}.jpg"/>
+      </div> 
+      <br/>
+      <div class="bottom_card">
+      <p id="ProdName" class="name">{{p.prdName}}</p>
+      <p class="name" id="type">{{p.prdDesc}}</p><br/>
+      <p class="name font-weight-normal" id="price" >Product Price: {{p.prdPrice}} INR</p>
+      <div class="foot">
+      <p class="emi">EMI MONTH: </p>
+      <form [formGroup]="EMI_SELECTOR">
+        <select formControlName="monthSel" id="monthSel" >
+            <option>3 Months</option>
+            <option>6 Months</option>
+            <option>12 Months</option>
+        </select>
+    </form>
+  </div>
+    <button *ngIf="isLoggedIn(); else notLoggedIn"  data-bs-toggle="modal" class="btnProd" role="button" data-bs-target="#exampleModal" (click)="goToEmiCalc(p)">Go To EMI Calculator</button>
+    <ng-template #notLoggedIn>
+    <button type="button" role="button" class="btnProd" (click)="goToLogin()">Login to Proceed</button>
+    </ng-template>
+  </div>
+</div>
+  </div>
+
+  </div>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            <h5 class="head_emi">EMI INFO</h5>
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <div class="Foot_emi">
+          <div class="EMI_Duration">Duration:<h5> {{emi}} Months</h5></div>
+          <br/>
+          <div class="">Total Amount:<h5>{{prdRate}} INR</h5></div>
+          <div>Total Installments:<h5>{{emi}}</h5></div>
+          <div>Amount Per Installment:<h5>{{installmentAmt}} INR</h5></div>
+        </div>
+      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="goToBuy()">Continue to Buy</button>
+        </div>
+      </div>
+    </div>
+  </div>

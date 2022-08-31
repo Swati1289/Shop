@@ -1,0 +1,25 @@
+<body> 
+<h1 style="text-align:center ; padding-top: 15px;">My Card</h1>
+<hr>
+<!-- <ul> 
+    <li routerLink="/Products" routerLinkActive="active">Your Products</li>
+    <li routerLink="/myCard" routerLinkActive="active">My Card</li>
+    <li routerLink="/editUser" routerLinkActive="active">Update</li>
+</ul> -->
+<hr>
+
+<div class="testbox" *ngFor="let c of cardDetails">
+
+  <h2 class="title" style="text-align:center ;">Your Own Finance Card</h2>
+
+  <label class="cardNo" for="cardNo">Card Number: <b>{{ c.cardNo }}</b></label>
+
+  <label for="cardType">Card Type: <b>{{ c.cardType }}</b></label>
+
+  <label for="cardLimit">Card Limit: <b>{{ c.cardLimit }}</b></label>
+
+  <label for="validity">Card Validity: <b>{{ c.validityDate }}</b></label>
+
+  <label for="balance">Card Balance: <b>{{ c.balance }}</b></label>
+</div> 
+</body>

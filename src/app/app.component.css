@@ -1,0 +1,51 @@
+app-header {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  height: 4rem;
+  z-index: 2;
+  background: linear-gradient(to right, rgb(67, 42, 155), rgb(15, 0, 58));
+}
+.wrapper {
+  background-color: aqua;
+}
+main {
+  position: absolute;
+  width: 100%;
+  top: 4rem;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+}
+
+app-sidenav {
+  position: fixed;
+  left: 0rem;
+  width: 60px;
+  height: calc(100vh - 4rem);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-top: 1px solid white;
+  overflow-x: hidden;
+  white-space: nowrap;
+  transition: width 250ms ease-in;
+  background: linear-gradient(to right, rgb(45, 45, 45), rgb(13, 11, 19));
+}
+.app-side-nav-open {
+  background: linear-gradient(to right, rgb(45, 45, 45), rgb(13, 11, 19));
+  width: 250px;
+}
+
+.display-area {
+  position: absolute;
+  left: 60px;
+  width: calc(100% - 60px);
+  transition: left 250ms linear, width 250ms linear;
+  background-repeat: no-repeat;
+  background-size: 100rem 200rem;
+  background-blend-mode: lighten;
+}
+.display-area ::background {
+  opacity: 0.2;
+}
+.display-area-shrink {
+  width: calc(100% - 250px);
+  left: 250px;
+}

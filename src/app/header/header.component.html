@@ -1,0 +1,80 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark px-2">
+  <div class="side-nav-button p-2 me-3 text-light" (click)="SideNavToggle()">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+  <img src="assets/images/logo.jpeg" style="width: 64px" alt="logo" />
+  <a class="navbar-brand px-4" href="#"><h2>ShopEasy</h2></a>
+  <diV class="navbar-collapse">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle d-none"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+        >
+          Product
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li><a class="dropdown-item" href="#">child 1</a></li>
+          <li><a class="dropdown-item" href="#">child 2</a></li>
+          <li><a class="dropdown-item" href="#">child 3</a></li>
+          <li><a class="dropdown-item" href="#">child 4</a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle d-none"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+        >
+          Dashboard
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <li><a class="dropdown-item" href="#">child 1</a></li>
+          <li><a class="dropdown-item" href="#">child 2</a></li>
+          <li><a class="dropdown-item" href="#">child 3</a></li>
+          <li><a class="dropdown-item" href="#">child 4</a></li>
+        </ul>
+      </li>
+    </ul>
+  </diV>
+  <form [formGroup]="searchRes" (ngSubmit)="search()" class="d-flex me-5">
+    <input
+      class="from-control me-2"
+      type="search"
+      id="searchTerm"
+      formControlName="searchTerm"
+    />
+    <button class="btn btn-outline-light" type="submit">Search</button>
+  </form>
+
+  <div class="profile-logo dropstart">
+    <button
+      class="btn btn-outline-light dropdown-toggle"
+      data-bs-toggle="dropdown"
+    >
+      {{ retrive() }}
+    </button>
+    <ul class="dropdown-menu dropdown-menu-dark">
+      <li>
+        <a href="#" [routerLink]="['/register-customer']" class="dropdown-item"
+          >Sign Up</a
+        >
+      </li>
+      <li>
+        <a href="#" [routerLink]="['/login']" class="dropdown-item">Log In</a>
+      </li>
+      <li>
+        <a
+          href="#"
+          [routerLink]="['/login']"
+          class="dropdown-item"
+          (click)="logout()"
+          >Log Out</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>

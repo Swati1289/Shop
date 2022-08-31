@@ -1,0 +1,43 @@
+.h-100 {
+  width:100%;
+
+}
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #fccb90;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #e48c4d, #dc474a, #c84b7b, #263b74);
+    }
+    
+    @media (min-width: 800px) {
+    .gradient-form {
+    height: 95vh ;
+    }
+    }
+    @media (min-width: 769px) {
+    .gradient-custom-3 {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    }
+    }
+    
+.ng-valid[required],
+.ng-valid.required {
+  border-left: 5px solid #42a948; /* green */
+}
+ 
+.ng-invalid:not(form) {
+  border-left: 5px solid #a94442; /* red */
+}
+.alert {
+  background-color: #f38c72;
+}
+.alert-danger {
+  color: #a94442;
+  font-size: 12px;
+  
+}

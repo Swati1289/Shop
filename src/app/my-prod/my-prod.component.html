@@ -1,0 +1,43 @@
+<div class="main" >
+<div class="wrapper" *ngFor="let mp of myProdList;">
+  <div class="bill"  >
+    <div class="bill_body">
+    <div class="head">
+     <div class="status">
+      <h5 class="complete" *ngIf="displayName(mp); else elseStatus">Complete</h5>
+      <ng-template #elseStatus>
+          <h5 class="pending">Pending!</h5>
+      </ng-template>
+    </div>
+    </div>
+
+    <div class="foot">
+    <div class="side1">
+      <img src="assets/images/img{{mp.prd.prdId}}.jpg"/>
+    </div>
+    <div class="side2">
+      <p class="pName">{{mp.prd.prdName}}</p>
+      <p class="billId">{{mp.billId}}</p>
+      <p>{{mp.prd.prdPrice}} INR</p>
+      <p class="pDesc">{{mp.prd.prdDesc}}</p>
+    </div>
+    <div class="side3">
+      <div>
+        <div class="payinfo">You have<h5>{{displayPendingInstallment(mp)}} </h5> Installments left to pay. Pay before the deadline to avoid any inconvenience</div>
+      </div>
+    </div>
+    <div class="side4">
+      <div *ngIf="payButtonActive(mp); else completeButton" class="pWin">Press the following button to pay your Installments<br><br><br>
+      <button class="button-36" data-bs-toggle="" data-bs-target="" (click)="goToEmiPayment(mp)">Pay</button>
+      </div>
+      <ng-template #completeButton class="pWin">
+          <div>You Have Successfully Paid All the Installments</div><br><br>
+          <button class="button-64" disabled>Payment Done</button>
+      </ng-template>
+    </div>
+   </div>
+  </div>
+  </div>
+</div>
+</div>
+

@@ -1,0 +1,34 @@
+
+
+<div id="navbar">
+    <ul id="links">
+      <li class="link"  [routerLink]="['/addproduct']">Add Products</li>
+      <li class="link"  [routerLink]="['/admindashboard']">Show Users</li>
+     
+    </ul>
+  </div>
+
+  <input type="text" class="form-control" name="prdId" [(ngModel)] ="prdId" (ngModelChange) ="Search()" placeholder="Enter Product ID to search">
+  
+  <form>
+      <table class="table" >
+        <tr>
+              <th colspan="14" style="text-align:center;" class="thead-dark">AVAIALBLE PRODUCT</th>
+          </tr>
+        <tr>
+          <th (click)="sortData()">Product ID</th>
+          <th>Product Name</th>
+          <th>Product Desc</th>
+          <th>Product Price</th>
+          <th>Delete</th>
+        </tr>
+        
+        <tr *ngFor="let prod of products" >
+          <td>{{prod.prdId}}</td>
+          <td>{{prod.prdName}}</td>
+          <td>{{prod.prdDesc}}</td>
+          <td>{{prod.prdPrice}}</td>
+          <td><button class="btn btn-danger" (click)="OnDelete(prod.prdId)" confirm="Delete Product?" >Delete</button></td>
+      </tr>
+      </table>     
+      </form>
