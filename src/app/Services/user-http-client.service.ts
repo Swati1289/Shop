@@ -33,7 +33,7 @@ export class CustHttpClientService {
 
   public updateUserPhone(id: number, newPhoneNo: number) {
     return this.httpser.put<any>(
-      this.baseUrl + '/updatebyPhone' + '/' + id + '/' + newPhoneNo,
+      this.baseUrl + '/updateByPhone' + '/' + id + '/' + newPhoneNo,
       id
     );
   }

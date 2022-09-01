@@ -36,7 +36,9 @@ export class EditCustomerComponent implements OnInit {
       )
       .subscribe((Response: any) => {
         console.log(Response)
-        alert("Phone No Updated")
-      });
+        
+      }
+      );
+      alert("Phone No. updated succesfullly!!");
   }
 }
