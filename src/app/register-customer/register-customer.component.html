@@ -97,7 +97,7 @@
 
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input type="email" id="form3Example3" class="form-control" formControlName="userEmail"/>
+                <input type="email" id="form3Example3" class="form-control" formControlName="userEmail" />
                 <label class="form-label" for="userEmail">Email address</label>
                 <div *ngIf="submitted &&userForm.controls['userEmail'].errors" class="error">
                   <div class="text-danger"  *ngIf="userForm.controls['userEmail'].errors['required']">

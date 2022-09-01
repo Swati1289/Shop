@@ -2,7 +2,7 @@
   <div class="side-nav-button p-2 me-3 text-light" (click)="SideNavToggle()">
     <i class="fa-solid fa-bars"></i>
   </div>
-  <img src="assets/images/logo.jpeg" style="width: 64px" alt="logo" />
+  <img src="assets/images/shoplogo.jpg" style="width: 64px" alt="logo" />
   <a class="navbar-brand px-4" href="#"><h2>ShopEasy</h2></a>
   <diV class="navbar-collapse">
     <ul class="navbar-nav me-auto">
@@ -40,7 +40,7 @@
       </li>
     </ul>
   </diV>
-  <form [formGroup]="searchRes" (ngSubmit)="search()" class="d-flex me-5">
+  <!-- <form [formGroup]="searchRes" (ngSubmit)="search()" class="d-flex me-5">
     <input
       class="from-control me-2"
       type="search"
@@ -48,7 +48,7 @@
       formControlName="searchTerm"
     />
     <button class="btn btn-outline-light" type="submit">Search</button>
-  </form>
+  </form> -->
 
   <div class="profile-logo dropstart">
     <button
@@ -57,16 +57,17 @@
     >
       {{ retrive() }}
     </button>
-    <ul class="dropdown-menu dropdown-menu-dark">
-      <li>
+    
+    <ul  class="dropdown-menu dropdown-menu-dark">
+      <li *ngIf="!(hasAname||hasUname)">
         <a href="#" [routerLink]="['/register-customer']" class="dropdown-item"
           >Sign Up</a
         >
-      </li>
+      </li> 
       <li>
-        <a href="#" [routerLink]="['/login']" class="dropdown-item">Log In</a>
+        <a *ngIf="!(hasAname||hasUname)" href="#" [routerLink]="['/login']" class="dropdown-item">Log In</a>
       </li>
-      <li>
+      <li *ngIf="hasAname||hasUname">
         <a
           href="#"
           [routerLink]="['/login']"
@@ -76,5 +77,6 @@
         >
       </li>
     </ul>
+ 
   </div>
 </nav>

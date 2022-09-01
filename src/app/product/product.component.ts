@@ -75,10 +75,7 @@ export class ProductComponent implements OnInit {
   goToBuy(){
      console.log(this.balanceUser,this.prd.prdPrice);                                                           
      if(this.balanceUser>=this.prd.prdPrice){                                                          
-     this.billSer.addUserBill(this.prd.prdId, this.emi, this.activeUser ).subscribe(res=>{
-                                                  //this.router.navigate(['/myProd'])
-                                                  
-                                                  })
+     this.billSer.addUserBill(this.prd.prdId, this.emi, this.activeUser ).subscribe(res=>{this.router.navigate(['/myProd'])})
 
      this.cardSer.deductCredit(this.activeUser,this.prd.prdPrice) .subscribe(res=>{
                                                                                     console.log(res);
@@ -88,7 +85,7 @@ export class ProductComponent implements OnInit {
                                                                                       text: 'Go to MyProducts to see your order',
                                                                                       footer: '<a href="/">My Products</a>'
                                                                                     })
-                                                                                    this.router.navigate(['myCard'])
+                                                                                    this.router.navigate(['/myCard'])
                                                                                     })                                           
                                                 }
      else{

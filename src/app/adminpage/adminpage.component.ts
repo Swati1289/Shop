@@ -28,12 +28,17 @@ export class AdminpageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    this.adminService.getAllUserdetails().subscribe((data:any) =>{
-      console.log(data);
-      this.user=data;
+    if(localStorage.getItem("adminName") !== null){
+      this.adminService.getAllUserdetails().subscribe((data:any) =>{
+        console.log(data);
+        this.user=data;
+      }
+      );
+    }else{
+      this.router.navigate(["/adminlogin"])
+      alert("login required !!");
     }
-    );
+    
   }
   OnDelete(userId:any){
     localStorage.setItem("userId", userId);
@@ -80,7 +85,7 @@ export class AdminpageComponent implements OnInit {
         }
       )
       Swal.fire("Card Created",'User is verified','success');
- 
+        
       this.router.navigate(['/admindashboard'])
 
   }

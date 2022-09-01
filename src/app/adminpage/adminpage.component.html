@@ -41,7 +41,8 @@
         <td>{{u.userCard}}</td>
         <td>{{u.applied_on}}</td>
         <td>{{u.verified == true? 'Active': 'InActive'}} </td>
-       <td><button class="btn btn-info" (click)="CreateCard(u.userId)">Issue Card </button></td>
+        
+       <td><button class="btn btn-info" (click)="CreateCard(u.userId)">{{u.verified == true? 'Card Issued': 'Issue Card'}}</button></td>
         <td><button class="btn btn-danger"  (click)="OnDelete(u.userId)">delete</button></td>
     </tr>
     </table>     

@@ -58,12 +58,12 @@ export class LoginComponent implements OnInit {
 
     if (this.res == true) {
       console.log(this.res);
-      alert('Welcome to FinEase');
+      alert('Welcome to ShopEasy');
       localStorage.setItem('userName', this.login.userName);
       localStorage.setItem('userId', this.login.userId);
       sessionStorage.setItem('userId', this.login.userId);
       sessionStorage.setItem('userName', this.login.userName);
-      // this.router.navigate(['customer']);
+      this.router.navigate(['']);
     } else if (this.res == false) {
       alert('User not found');
     }

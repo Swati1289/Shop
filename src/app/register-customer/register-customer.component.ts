@@ -45,6 +45,7 @@ export class RegisterCustomerComponent implements OnInit {
       alert("Some Fields are empty")
     }
     this.adduser();
+    this.router.navigate(["/login"])
   }
 
   adduser(){

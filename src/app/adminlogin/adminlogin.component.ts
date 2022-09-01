@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { AdminService } from '../Services/admin.service';
 import { Adminlogin } from './adminlogin';
-
+import { HeaderComponent} from '../header/header.component';
 
 
 @Component({
@@ -21,10 +21,15 @@ export class AdminloginComponent implements OnInit {
   adminName:any ;
   adminPassword:any;
   message:string | undefined
- 
- 
+  
+  
+  public defaultName!:HeaderComponent;
+  public uname!:HeaderComponent;
+
+
   constructor( private adminService:AdminService, private router:Router ) {
     this.var=new Adminlogin;
+   
    }
  
   ngOnInit(): void {
@@ -42,6 +47,7 @@ export class AdminloginComponent implements OnInit {
           }if(this.n==1){
             this.message="Succefully logged-In";
             Swal.fire("Welcome",'Admin Login sucessfull','success');
+            localStorage.setItem('adminName', this.adminName);
             this.router.navigate(['/admindashboard']);
           }
         }

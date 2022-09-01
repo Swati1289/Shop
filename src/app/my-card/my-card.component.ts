@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CardHttpClientService } from '../Services/card-http-client.service';
 import { mycard } from './mycard';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-card',
@@ -12,10 +13,16 @@ export class MyCardComponent implements OnInit {
   userId!: number;
   cardDetails: mycard[]=[];
   default: string | null="Login required"
-  constructor(private cardSer:CardHttpClientService) { }
+  constructor(private cardSer:CardHttpClientService ,private route:ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
-    this.getMyCard();
+    if(localStorage.getItem("userName") !== null){
+      this.getMyCard();
+    }else{
+      alert("Login Required!!");
+      this.router.navigate(["/login"])
+    }
+    
   }
 
   getMyCard(){

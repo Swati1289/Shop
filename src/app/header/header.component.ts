@@ -1,3 +1,4 @@
+import { ElementSchemaRegistry } from '@angular/compiler';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -15,6 +16,11 @@ export class HeaderComponent implements OnInit {
   searchForm:any;
   public defaultName:any="Login/SignUp";
   public uName:any="";
+  public aName:any="";
+  public hasUname:boolean=false;
+  public hasAname:boolean=false;
+
+  
   
   constructor(private prdSer:ProductService, private router:Router,private fb:FormBuilder) { }
 
@@ -24,16 +30,27 @@ export class HeaderComponent implements OnInit {
     })
   }
   retrive(){
-    this.uName=localStorage.getItem("userName");
-    if(this.uName == null){
+    this.uName=localStorage.getItem("userName")
+    this.aName=localStorage.getItem("adminName")
+    if(this.uName == null&&this.aName == null){
+      this.hasAname =false;
+      this.hasUname=false;
       return this.defaultName
     }
     else{
-      return this.uName;
+      if(this.uName==null && this.aName != null){
+        this.hasAname=true;
+        return this.aName;
+      }else{
+        this.hasUname = true;
+        return this.uName;
+      }
+      
     }
   } 
 
   logout(){
+    localStorage.removeItem('adminName')
     sessionStorage.removeItem('userId')
     sessionStorage.removeItem('userName')
     localStorage.removeItem('userId')
@@ -52,3 +69,6 @@ export class HeaderComponent implements OnInit {
   }
 
 }
+
+
+
